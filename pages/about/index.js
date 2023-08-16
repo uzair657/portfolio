@@ -113,8 +113,9 @@ const About = () => {
           </h2>
           <p className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0">
             5 year ago, I began freelancing as a wordpress developer . Since
-            then, I've done remote work for agencies, consulted for startups,
-            and collaborated on digital products for business and consumer use.
+            then, I&apos;ve done remote work for agencies, consulted for
+            startups, and collaborated on digital products for business and
+            consumer use.
           </p>
           {/* Counter */}
           <div className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8">
@@ -180,7 +181,11 @@ const About = () => {
                   <div>{item.stage}</div>
                   <div className="flex gap-x-4">
                     {item.icons?.map((icon, itemIndex) => {
-                      return <div className="text-2xl text-white">{icon}</div>;
+                      return (
+                        <div key={itemIndex} className="text-2xl text-white">
+                          {icon}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
