@@ -26,19 +26,19 @@ const aboutData = [
     info: [
       {
         title: "Web Development",
-        icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
-        ],
+        // icons: [
+        //   <FaHtml5 />,
+        //   <FaCss3 />,
+        //   <FaJs />,
+        //   <FaReact />,
+        //   <SiNextdotjs />,
+        //   <SiFramer />,
+        //   <FaWordpress />,
+        // ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        // icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
       },
     ],
   },
@@ -105,7 +105,14 @@ const About = () => {
       >
         <Avatar />
       </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <motion.div
+        variants={fadeIn("right", 0.4)}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6"
+      >
+        {/* Text */}
         <div className="flex-1 flex flex-col justify-center">
           <h2 className="h2">
             Captivating <span className="text-blue-400">stories</span> birth
@@ -150,7 +157,14 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
+        {/* Info Right Side */}
+        <motion.div
+          variants={fadeIn("left", 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+        >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, itemIndex) => {
               return (
@@ -180,20 +194,21 @@ const About = () => {
                   <div className="hidden md:flex">-</div>
                   <div>{item.stage}</div>
                   <div className="flex gap-x-4">
-                    {item.icons?.map((icon, itemIndex) => {
+                    {/* {item.icons?.map((icon, itemIndex) => {
                       return (
                         <div key={itemIndex} className="text-2xl text-white">
                           {icon}
                         </div>
                       );
-                    })}
+
+                    })} */}
                   </div>
                 </div>
               );
             })}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

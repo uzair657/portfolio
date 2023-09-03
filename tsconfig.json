@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/about/index.js"  ],
+, "pages/about/index.js", "components/WorkSlider.js"  ],
   "exclude": [
     "node_modules"
   ]
